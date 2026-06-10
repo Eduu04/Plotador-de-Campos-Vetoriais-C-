@@ -11,7 +11,7 @@ find_package(SFML 3 REQUIRED COMPONENTS Graphics Window System)
 
 add_executable(plotador_vetorial
     src/main.cpp
-    src/ExternalParserWrapper.cpp
+    src/Parser.cpp
     src/DatasetVetor.cpp
     src/Arrow.cpp
 )
