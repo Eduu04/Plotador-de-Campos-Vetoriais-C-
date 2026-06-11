@@ -87,24 +87,4 @@ int main() {
     std::cout << std::setfill('-') << std::setw(20) << "" << " Programa Encerrado " << std::setw(20) << "" << std::endl;
     std::cout << "\n";
     return 0;
-}    while (window.isOpen()) {      
-        
-        while (const std::optional evento = window.pollEvent()) {
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)) {
-                window.close();
-            }
-        }
-       
-        window.clear(sf::Color(20,20,20));
 
-        for (const auto& objeto : Rep_Grafica){
-            objeto->render(window);
-        }
-        window.display();
-    }
-
-    std::cout << "\n";
-    std::cout << std::setfill('-') << std::setw(20) << "" << " Programa Encerrado " << std::setw(20) << "" << std::endl;
-    std::cout << "\n";
-    return 0;
-}
