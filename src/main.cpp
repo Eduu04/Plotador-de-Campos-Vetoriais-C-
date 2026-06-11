@@ -67,10 +67,7 @@ int main() {
         
         while (const std::optional evento = window.pollEvent()) {
 
-            if (evento->is<sf::Event::Closed>()) {
-                window.close();
-            }
-            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)) {
+            if (evento->is<sf::Event::Closed>() || sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)) {
                 window.close();
             }
         }
