@@ -20,13 +20,14 @@ int main() {
     Parser fx_exprtk(fx);
     Parser fy_exprtk(fy);
 
-    int Total_Pontos = 625;
+    int N = 30;
+
+    int Total_Pontos = N*N;
     DatasetVetor dataset(Total_Pontos);
 
     sf::RenderWindow window(sf::VideoMode({800, 800}), "Plot de Campo Vetorial");
     std::vector<std::unique_ptr<Renderable>> Rep_Grafica;
 
-    int N = 30;
     double escala = 15.0;
 
     unsigned long long indice = 0;
@@ -65,23 +66,6 @@ int main() {
         
         while (const std::optional evento = window.pollEvent()) {
             if (evento->is<sf::Event::Closed>()) {
-                window.close();
-            }
-        }
-       
-        window.clear(sf::Color(20,20,20));
-
-        for (const auto& objeto : Rep_Grafica){
-            objeto->render(window);
-        }
-        window.display();
-    }
-
-    std::cout << "\n";
-    std::cout << std::setfill('-') << std::setw(20) << "" << " Programa Encerrado " << std::setw(20) << "" << std::endl;
-    std::cout << "\n";
-    return 0;
-}            if (evento->is<sf::Event::Closed>()) {
                 window.close();
             }
         }
