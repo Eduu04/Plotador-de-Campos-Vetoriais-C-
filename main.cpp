@@ -44,8 +44,10 @@ int main() {
 
             double modulo = std::sqrt(vx*vx + vy*vy);
             
-            vx /= modulo;
-            vy /= modulo;
+            if (modulo > 1e-8){
+                vx /= modulo;
+                vy /= modulo;
+            }
 
             double xTela = (x + 5.0) * (80.0);
             double yTela = (5.0 - y) * (80.0);
@@ -63,6 +65,23 @@ int main() {
         
         while (const std::optional evento = window.pollEvent()) {
             if (evento->is<sf::Event::Closed>()) {
+                window.close();
+            }
+        }
+       
+        window.clear(sf::Color(20,20,20));
+
+        for (const auto& objeto : Rep_Grafica){
+            objeto->render(window);
+        }
+        window.display();
+    }
+
+    std::cout << "\n";
+    std::cout << std::setfill('-') << std::setw(20) << "" << " Programa Encerrado " << std::setw(20) << "" << std::endl;
+    std::cout << "\n";
+    return 0;
+}            if (evento->is<sf::Event::Closed>()) {
                 window.close();
             }
         }
