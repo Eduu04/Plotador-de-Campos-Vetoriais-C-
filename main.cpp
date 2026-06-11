@@ -52,7 +52,7 @@ int main() {
             double xTela = (x + 5.0) * (80.0);
             double yTela = (5.0 - y) * (80.0);
             double xFinal = xTela + escala*vx;
-            double yFinal = yTela + escala*vy;
+            double yFinal = yTela - escala*vy;
 
             Rep_Grafica.push_back(std::make_unique<Arrow>(xTela, yTela, xFinal, yFinal));
 
