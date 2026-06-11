@@ -22,7 +22,7 @@ int main() {
 
     int N = 30;
 
-    int Total_Pontos = N*N;
+    int Total_Pontos = N * N;
     DatasetVetor dataset(Total_Pontos);
 
     sf::RenderWindow window(sf::VideoMode({800, 800}), "Plot de Campo Vetorial");
@@ -65,7 +65,7 @@ int main() {
     while (window.isOpen()) {      
         
         while (const std::optional evento = window.pollEvent()) {
-            if (evento->is<sf::Event::Closed>()) {
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Escape)) {
                 window.close();
             }
         }
