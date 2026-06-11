@@ -87,4 +87,5 @@ int main() {
     std::cout << std::setfill('-') << std::setw(20) << "" << " Programa Encerrado " << std::setw(20) << "" << std::endl;
     std::cout << "\n";
     return 0;
+}
 
