@@ -34,7 +34,7 @@ int main() {
     sf::RenderWindow window(sf::VideoMode({larguraJanela, alturaJanela}), "Plot de Campo Vetorial");
     std::vector<std::unique_ptr<Renderable>> Rep_Grafica;
 
-    double escala = 15.0;
+    double escala = 40.0;
 
     unsigned long long indice = 0;
 
@@ -55,15 +55,17 @@ int main() {
             double modulo = std::sqrt(vx*vx + vy*vy);
             
             if (modulo > 1e-8){
+
                 vx /= modulo;
                 vy /= modulo;
             }
 
-            double xTela = (x + 5.0) * (fatorX);
-            double yTela = (5.0 - y) * (fatorY);
-            double xFinal = xTela + escala*vx;
-            double yFinal = yTela - escala*vy;
+            double escalaDinamica = escala * std::tanh(modulo * 0.5);
 
+            double xTela = (x + 5.0) * fatorX;
+            double yTela = (5.0 - y) * fatorY;
+            double xFinal = xTela + escalaDinamica * vx;
+            double yFinal = yTela - escalaDinamica * vy;
             Rep_Grafica.push_back(std::make_unique<Arrow>(xTela, yTela, xFinal, yFinal));
 
             indice++;
