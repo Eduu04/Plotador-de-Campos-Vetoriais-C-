@@ -67,8 +67,8 @@ int main() {
     for (int i = 0; i<N; i++){
         for (int j = 0; j<N; j++){
 
-            double x = -5.0 + 10*j/(N-1);
-            double y = 5.0 - 10*i/(N-1);
+            double x = -5.0 + 10.0*j/(N-1);
+            double y = 5.0 - 10.0*i/(N-1);
 
             dataset.set(indice, Vetor2D<double>(fx_exprtk.avalia(x, y), fy_exprtk.avalia(x, y)));
             Vetor2D<double> vetorAtual = dataset.getVet(indice);
